@@ -11,6 +11,7 @@ import EnhancedMsg from './EnhancedMsg.vue';
 import HideGzkInfo from './HideGzkInfo.vue';
 import ImageHosting from './ImageHosting.vue';
 import SmApiKey from './SmApiKey.vue';
+import Theme from './Theme.vue';
 
 import type { CheckedOption, Setting } from '@/types';
 
@@ -66,6 +67,12 @@ const settings = computed<Setting[]>(() => {
     {
       category: t('basicSetting.category.other'),
       list: [
+        {
+          name: t('basicSetting.theme.title'),
+          description: t('basicSetting.theme.titleDesc'),
+          key: OptionsKey.Theme,
+          component: Theme,
+        },
         {
           name: t('basicSetting.floatUserInfo.title'),
           description: t('basicSetting.floatUserInfo.titleDesc'),

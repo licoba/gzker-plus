@@ -1,0 +1,172 @@
+// 暗色主题样式
+body.dark-theme {
+  // 背景色
+  color: #e0e0e0;
+  background-color: #1a1a1a;
+
+  // Element Plus 组件暗色主题
+  --el-bg-color: #1a1a1a;
+  --el-bg-color-page: #141414;
+  --el-bg-color-overlay: #262626;
+  --el-text-color-primary: #e0e0e0;
+  --el-text-color-regular: #c0c0c0;
+  --el-text-color-secondary: #a0a0a0;
+  --el-text-color-placeholder: #808080;
+  --el-border-color: #404040;
+  --el-border-color-light: #363636;
+  --el-border-color-lighter: #2c2c2c;
+  --el-border-color-extra-light: #242424;
+  --el-fill-color: #262626;
+  --el-fill-color-light: #2c2c2c;
+  --el-fill-color-lighter: #323232;
+  --el-fill-color-extra-light: #383838;
+  --el-fill-color-dark: #202020;
+  --el-fill-color-darker: #1a1a1a;
+  --el-fill-color-blank: transparent;
+
+  // 卡片和容器
+  .el-card {
+    background-color: #262626;
+    border-color: #404040;
+  }
+
+  .el-dialog {
+    background-color: #262626;
+  }
+
+  .el-table {
+    --el-table-bg-color: #262626;
+    --el-table-tr-bg-color: #262626;
+    --el-table-header-bg-color: #2c2c2c;
+  }
+
+  .el-input {
+    --el-input-bg-color: #2c2c2c;
+    --el-input-border-color: #404040;
+  }
+
+  .el-select-dropdown {
+    background-color: #2c2c2c;
+  }
+
+  .el-select-dropdown__item {
+    color: #e0e0e0;
+
+    &:hover {
+      background-color: #383838;
+    }
+
+    &.selected {
+      color: var(--el-color-primary);
+    }
+  }
+
+  .el-checkbox {
+    --el-checkbox-input-border: #404040;
+  }
+
+  .el-button {
+    --el-button-bg-color: #2c2c2c;
+    --el-button-border-color: #404040;
+    --el-button-text-color: #e0e0e0;
+    --el-button-hover-bg-color: #383838;
+    --el-button-hover-border-color: #4a4a4a;
+    --el-button-hover-text-color: #fff;
+  }
+
+  // 设置页面样式
+  .setting-category-content {
+    &:hover {
+      background-color: rgb(64 158 255 / 10%);
+    }
+  }
+
+  .setting-item-description,
+  .setting-item-description-check .el-checkbox__label {
+    color: #a0a0a0;
+  }
+
+  // 表格样式
+  .el-table__row {
+    color: #e0e0e0;
+    background-color: #262626;
+
+    &:hover {
+      background-color: #2c2c2c;
+    }
+  }
+
+  .el-table__header-wrapper {
+    background-color: #2c2c2c;
+  }
+
+  // 消息框样式
+  .el-message {
+    background-color: #2c2c2c;
+    border-color: #404040;
+  }
+
+  .el-message-box {
+    background-color: #2c2c2c;
+    border-color: #404040;
+  }
+
+  // Markdown 内容暗色主题
+  .markdown-body {
+    color: #e0e0e0;
+    background-color: #1a1a1a;
+
+    a {
+      color: #4a9eff;
+    }
+
+    code {
+      color: #e0e0e0;
+      background-color: #2c2c2c;
+    }
+
+    pre {
+      background-color: #2c2c2c;
+    }
+
+    blockquote {
+      color: #a0a0a0;
+      border-left-color: #404040;
+    }
+
+    table {
+      tr {
+        background-color: #262626;
+        border-top-color: #404040;
+
+        &:nth-child(2n) {
+          background-color: #2c2c2c;
+        }
+      }
+
+      th,
+      td {
+        border-color: #404040;
+      }
+    }
+  }
+
+  // 侧边栏样式
+  .el-menu {
+    background-color: #262626;
+    border-right-color: #404040;
+  }
+
+  .el-menu-item {
+    color: #c0c0c0;
+
+    &:hover {
+      background-color: #2c2c2c;
+    }
+
+    &.is-active {
+      color: var(--el-color-primary);
+      background-color: rgb(64 158 255 / 10%);
+    }
+  }
+}

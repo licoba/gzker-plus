@@ -75,6 +75,14 @@
         "verified": "Verified",
         "vipUser": "VIP user"
       }
+    },
+    "theme": {
+      "mode": {
+        "dark": "Dark Theme",
+        "light": "Light Theme"
+      },
+      "title": "Extension Theme",
+      "titleDesc": "Choose the display theme of the extension, switch between light or dark mode"
     }
   },
   "biliImages": {

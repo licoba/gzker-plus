@@ -106,6 +106,11 @@ export const enum ImageHostingPlatform {
   Bili = 'bili',
 }
 
+export const enum ThemeMode {
+  Light = 'light',
+  Dark = 'dark',
+}
+
 export const enum OptionsKey {
   BlankLink = 'blankLink',
   DblclickToTop = 'dblclickToTop',
@@ -116,6 +121,7 @@ export const enum OptionsKey {
   CloseDialogOnClickModal = 'closeDialogOnClickModal',
   HideGzkInfo = 'hideGzkInfo',
   ImageHosting = 'imageHosting',
+  Theme = 'theme',
 }
 
 export const defaultExtensionOptions: Options = {
@@ -145,6 +151,9 @@ export const defaultExtensionOptions: Options = {
   },
   [OptionsKey.ImageHosting]: {
     platform: ImageHostingPlatform.Bili,
+  },
+  [OptionsKey.Theme]: {
+    mode: ThemeMode.Light,
   },
 };
 

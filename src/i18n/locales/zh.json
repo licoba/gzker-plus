@@ -75,6 +75,14 @@
         "verified": "已验证",
         "vipUser": "VIP 用户"
       }
+    },
+    "theme": {
+      "mode": {
+        "dark": "暗色主题",
+        "light": "亮色主题"
+      },
+      "title": "插件主题",
+      "titleDesc": "选择插件的显示主题，切换亮色或暗色模式"
     }
   },
   "biliImages": {

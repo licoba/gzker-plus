@@ -12,6 +12,7 @@ import type {
   LinkElementType,
   OptionsKey,
   ReplyType,
+  ThemeMode,
 } from '@/constants';
 
 declare global {
@@ -78,6 +79,9 @@ export interface Options {
   };
   [OptionsKey.ImageHosting]: {
     platform: ImageHostingPlatform;
+  };
+  [OptionsKey.Theme]: {
+    mode: ThemeMode;
   };
 }
 
