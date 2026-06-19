@@ -1,30 +1,11 @@
 ---
-description: TypeScript 编码约定。项目使用 TypeScript 5.0，严格模式下开发。
+description: TypeScript 编码约定。ESLint 已覆盖的部分（no-explicit-any、simple-import-sort、prefer-optional-chain）不再赘述。
 globs: "*.ts,*.tsx,*.vue"
 ---
 
 # TypeScript 编码约定
 
-## 禁止使用 `any` 类型
-
-项目中禁止使用 `any` 类型。如果确实需要绕过类型检查，使用 `// eslint-disable-next-line @typescript-eslint/no-explicit-any` 显式注释。
-
-```typescript
-// ✅ 正确 - 使用具体类型
-const handleReplyLike = (replyItem: UserReplyItem, msg: string) => {
-  replyItem.liked = true;
-};
-
-// ✅ 正确 - 使用泛型约束
-export const useScrollLoad = <T>(pageSize: number, requestCallback: (page: number) => Promise<T[]>) => {
-  const dataList = ref<T[]>([]) as Ref<T[]>;
-};
-
-// ❌ 错误
-const handleReplyLike = (replyItem: any, msg: any) => {
-  replyItem.liked = true;
-};
-```
+> ESLint 已自动处理的规则不在本文档中（导入排序 → `pnpm lint:fix`、禁止 any → `no-explicit-any` 规则、可选链 → `prefer-optional-chain` 规则）。
 
 ## 枚举使用 `const enum`
 
@@ -38,11 +19,6 @@ export const enum DarkMode {
   System = 'system',
 }
 
-export const enum OptionsKey {
-  BlankLink = 'blankLink',
-  DarkMode = 'darkMode',
-}
-
 // ❌ 错误 - 不要使用普通 enum
 export enum DarkMode {
   Off = 'off',
@@ -51,15 +27,7 @@ export enum DarkMode {
 }
 ```
 
-**例外：** 当枚举值需要作为 Record key 时，使用字符串字面量联合类型：
-
-```typescript
-// ✅ 正确 - Record key 场景
-export const OptionsRoutePaths: Record<OptionsRouteNames, string> = {
-  [OptionsRouteNames.BasicSetting]: '/basic-setting',
-  [OptionsRouteNames.BlockedTopics]: '/blocked-topics',
-};
-```
+**例外：** 当枚举值需要作为 Record key 时，`const enum` 内联后不可索引，此时可用普通枚举。
 
 ## 函数声明风格
 
@@ -72,11 +40,6 @@ export const request = async (url: string, init?: RequestInit): Promise<string> 
   return data;
 };
 
-// ✅ 正确 - 单表达式
-export const addUnit = (val: number, unit: string = 'px'): string => {
-  return val + unit;
-};
-
 // ❌ 错误
 export async function request(url: string, init?: RequestInit): Promise<string> {
   const res = await fetch(GZK_URL + url, init);
@@ -85,30 +48,6 @@ export async function request(url: string, init?: RequestInit): Promise<string> 
 ```
 
 **例外：** Generator 函数和需要 `this` 上下文的场景可使用 `function` 声明。
-
-## 类型导入使用 `import type`
-
-```typescript
-// ✅ 正确
-import type { Ref } from 'vue';
-import type { Options, StorageSettings, UserReplyItem } from '@/types';
-import type { Tabs } from 'webextension-polyfill';
-
-// ✅ 正确 - 混合使用
-import { computed, ref } from 'vue';
-import type { LoadingOptions } from 'element-plus';
-```
-
-## 可选链和空值合并
-
-优先使用可选链 `?.` 和空值合并 `??`。
-
-```typescript
-// ✅ 正确
-const uid = htmlStr.match(/<div class="username">([^<]+)<\/div>/)?.[1];
-const unreadNum = msgIndicatorEle.title.match(/你有(\d+)条未读提醒/)?.[1];
-return unreadNum ? Number(unreadNum) : 0;
-```
 
 ## 类型注解
 

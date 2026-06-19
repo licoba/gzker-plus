@@ -167,22 +167,3 @@ const handleClick = () => {
 <!-- ✅ 正确 - 少量属性可一行 -->
 <ElRadio value="soft">柔和</ElRadio>
 ```
-
-## Composables 使用规范
-
-- Composable 放在 `src/composables/` 目录
-- 命名以 `use` 开头
-- 返回对象而非数组（便于按需解构）
-
-```typescript
-// ✅ 正确
-export const useDarkMode = () => {
-  const isDark = computed(() => {
-    /* ... */
-  });
-
-  return {
-    isDark,
-  };
-};
-```
