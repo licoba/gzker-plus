@@ -132,6 +132,20 @@ const handleClick = () => {
 | 事件监听          | **kebab-case** | `@import-history`, `@toggle-fullscreen`                    |
 | UnoCSS 图标       | **kebab-case** | `<un-i-mdi-close>`, `<un-i-mdi-arrow-up-bold-box-outline>` |
 
+### 属性书写顺序
+
+多行属性时严格按以下顺序排列，每个属性独占一行：
+
+1. `ref` — 引用
+2. `v-xxx` — Vue 指令 (`v-model`、`v-if`、`v-show`、`v-for`、`v-html` 等)
+3. `class` / `:class` / `:style` — 样式绑定
+4. 其他 props — 动态 props (`:xxx`) 在前，静态 props 在后
+5. `@xxx` — 事件监听
+
+布尔 props 为 `true` 时省略值，只写属性名：
+- ✅ `mentionable`、`hide-tip`、`align-center`
+- ❌ `:mentionable="true"`
+
 ```vue
 <!-- ✅ 正确 - Vue 组件 PascalCase，属性 kebab-case -->
 <ElementConfig>

@@ -109,3 +109,25 @@ export const useStorageStore = defineStore('storage', () => {
   // ...
 });
 ```
+
+## CSS 类名命名
+
+所有类名使用 **kebab-case**，以组件名为前缀，形成 `{组件前缀}-{元素名}` 的层级结构：
+
+| 组件 | 前缀 | 示例 |
+|------|------|------|
+| `ReplyEditor` | `reply-editor-` | `reply-editor-container`、`reply-editor-header`、`reply-editor-body` |
+| `ReplyItem` | `reply-` | `reply-container`、`reply-main`、`reply-header`、`reply-footer` |
+| `Topic` | `topic-` | `topic-dialog`、`topic-container`、`topic-body-absolute` |
+| `TopicDetail` | `detail-` | `detail-header-top`、`detail-title`、`detail-meta` |
+| `TopicEditor` | `topic-editor-` | `topic-editor-header`、`topic-editor-form` |
+| `TopicFooter` | `footer-` | `footer-container`、`share-icon` |
+
+层级结构为 `{组件前缀}-{区块}-{子元素}`，如 `detail-header-top`（组件块 block 子元素）。
+
+**例外：** 跨组件复用的公共类不加前缀，定义在非 scoped 的 `<style lang="scss">` 中：
+- `.user-id` — 用户 ID 链接
+- `.user-meta` — 用户元信息行
+- `.main-content` — 主内容区
+- `.markdown-body` — Markdown 渲染内容
+- `.number-info` — 数字信息
