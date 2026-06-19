@@ -39,19 +39,6 @@ html[data-theme] {
     color: var(--el-text-color-secondary);
   }
 
-  .btn-default,
-  .btn-primary,
-  .btn-success,
-  .btn-danger {
-    transition: all 0.1s;
-
-    &:focus,
-    &:focus-visible {
-      outline: none;
-      box-shadow: none;
-    }
-  }
-
   .btn-default {
     color: var(--el-text-color-primary) !important;
     background-color: var(--el-fill-color);
